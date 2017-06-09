@@ -17,7 +17,9 @@ namespace Project
         double IQuote=0;
         double temp;
        //Initial Quote
-
+        /// <summary>
+   
+        /// </summary>
         public void InitialQuote()
         {
             //Estimated Worth
