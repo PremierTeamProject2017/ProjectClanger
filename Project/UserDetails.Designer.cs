@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserDetails));
-            this.btnSendEmail = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -49,18 +48,11 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiGenPass = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnSendEmail
-            // 
-            this.btnSendEmail.Location = new System.Drawing.Point(126, 306);
-            this.btnSendEmail.Name = "btnSendEmail";
-            this.btnSendEmail.Size = new System.Drawing.Size(85, 53);
-            this.btnSendEmail.TabIndex = 2;
-            this.btnSendEmail.Text = "Send Verification Email";
-            this.btnSendEmail.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
@@ -68,7 +60,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(85, 53);
             this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -78,14 +70,15 @@
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(85, 53);
             this.btnBack.TabIndex = 4;
-            this.btnBack.Text = "Back";
+            this.btnBack.Text = "&Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ftsUserDetail});
+            this.ftsUserDetail,
+            this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(444, 24);
@@ -201,7 +194,7 @@
             this.btnNewPassGen.Name = "btnNewPassGen";
             this.btnNewPassGen.Size = new System.Drawing.Size(85, 53);
             this.btnNewPassGen.TabIndex = 25;
-            this.btnNewPassGen.Text = "Generate New Password";
+            this.btnNewPassGen.Text = "&Generate New Password";
             this.btnNewPassGen.UseVisualStyleBackColor = true;
             this.btnNewPassGen.Click += new System.EventHandler(this.btnNewPassGen_Click);
             // 
@@ -226,6 +219,21 @@
             this.tsiGenPass.Text = "&Generate Password";
             this.tsiGenPass.Click += new System.EventHandler(this.generatePasswordToolStripMenuItem_Click);
             // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "&Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Text = "&About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
             // UserDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,7 +254,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnSendEmail);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "UserDetails";
@@ -262,7 +269,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnSendEmail;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -282,5 +288,7 @@
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsiGenPass;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }

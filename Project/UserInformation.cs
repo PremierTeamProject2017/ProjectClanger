@@ -44,9 +44,9 @@ namespace Project
                 objConnect.sql_string = "SELECT * FROM UserLogin";
                 ds = objConnect.GetConnection;
 
+                dgvUsers.Columns.Clear();
                 dgvUsers.DataSource = ds;
                 dgvUsers.VirtualMode = false;
-                dgvUsers.Columns.Clear();
                 dgvUsers.AutoGenerateColumns = true;
                 dgvUsers.DataMember = ds.Tables[0].ToString();
                 dgvUsers.CellFormatting += new DataGridViewCellFormattingEventHandler(dgvUsers_CellFormatting);
@@ -85,7 +85,6 @@ namespace Project
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             this.Close();
-            //myInt = 1;
             saveOrEdit = 1;
             UserDetails frm = new UserDetails();
             frm.Show();
@@ -97,10 +96,8 @@ namespace Project
             
             
             selected = dgvUsers.SelectedRows[0].Cells[0].Value.ToString();
-            //MessageBox.Show("hh");
             this.Close();
             saveOrEdit = 0;
-            //myInt = 0;
             UserDetails frm = new UserDetails();
             frm.Show();
         }
@@ -184,7 +181,9 @@ namespace Project
             {
                 objConnect.DeleteFromLoginDB(selected);
                 MessageBox.Show("Account Deleted");
-                fillData();
+                myInt = 1;
+                btnBack.PerformClick();
+                
             }
         }
 
@@ -213,6 +212,11 @@ namespace Project
             this.Close();
             Login frm2 = new Login();
             frm2.Show();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("ETB Software Testing Team Project\nPremier Insurance App\nTeam Lead: Sunny Negi\nSenior Developer: Derek Callaghan\nJunior Developer: Adam Bonner\nSenior Tester: Martin Scanlon\nTester: Piaras Buchanan");
         }
 
     }

@@ -50,7 +50,7 @@
             this.btnUserInformation.Name = "btnUserInformation";
             this.btnUserInformation.Size = new System.Drawing.Size(100, 55);
             this.btnUserInformation.TabIndex = 1;
-            this.btnUserInformation.Text = "User Information";
+            this.btnUserInformation.Text = "&User Information";
             this.btnUserInformation.UseVisualStyleBackColor = true;
             this.btnUserInformation.Click += new System.EventHandler(this.btnUserInformation_Click);
             // 
@@ -70,7 +70,7 @@
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(100, 55);
             this.btnLogOut.TabIndex = 3;
-            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.Text = "&Log Out";
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
@@ -127,7 +127,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -137,7 +137,7 @@
             this.btnPolicyInformation.Name = "btnPolicyInformation";
             this.btnPolicyInformation.Size = new System.Drawing.Size(100, 55);
             this.btnPolicyInformation.TabIndex = 7;
-            this.btnPolicyInformation.Text = "Policy Information";
+            this.btnPolicyInformation.Text = "&Policy Information";
             this.btnPolicyInformation.UseVisualStyleBackColor = true;
             this.btnPolicyInformation.Click += new System.EventHandler(this.btnPolicyInformation_Click);
             // 

@@ -49,6 +49,8 @@
             this.cboRestricted = new System.Windows.Forms.ComboBox();
             this.tbUserName = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -61,7 +63,7 @@
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(85, 53);
             this.btnAddUser.TabIndex = 1;
-            this.btnAddUser.Text = "Add User";
+            this.btnAddUser.Text = "&Add User";
             this.btnAddUser.UseVisualStyleBackColor = true;
             this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
@@ -71,7 +73,7 @@
             this.btnDeleteUser.Name = "btnDeleteUser";
             this.btnDeleteUser.Size = new System.Drawing.Size(85, 53);
             this.btnDeleteUser.TabIndex = 2;
-            this.btnDeleteUser.Text = "Delete User";
+            this.btnDeleteUser.Text = "&Delete User";
             this.btnDeleteUser.UseVisualStyleBackColor = true;
             this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
             // 
@@ -81,7 +83,7 @@
             this.btnEditUser.Name = "btnEditUser";
             this.btnEditUser.Size = new System.Drawing.Size(85, 53);
             this.btnEditUser.TabIndex = 3;
-            this.btnEditUser.Text = "Edit User";
+            this.btnEditUser.Text = "&Edit User";
             this.btnEditUser.UseVisualStyleBackColor = true;
             this.btnEditUser.Click += new System.EventHandler(this.btnEditUser_Click);
             // 
@@ -91,14 +93,15 @@
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(85, 53);
             this.btnBack.TabIndex = 4;
-            this.btnBack.Text = "Back";
+            this.btnBack.Text = "&Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(920, 24);
@@ -237,6 +240,21 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "&Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Text = "&About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
             // UserInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,6 +305,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cboAccessLevel;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
 
     }
 }

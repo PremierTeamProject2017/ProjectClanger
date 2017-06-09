@@ -70,10 +70,7 @@ namespace Project
 
         private void UserDetails_Load(object sender, EventArgs e)
         {
-            if (thisint == 1)
-            {
-                btnSendEmail.Hide();
-            }
+
             if (saveOrEdit == 1)
             {
                 lblRestricted.Hide();
@@ -203,6 +200,11 @@ namespace Project
         private void generatePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             btnNewPassGen.PerformClick();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("ETB Software Testing Team Project\nPremier Insurance App\nTeam Lead: Sunny Negi\nSenior Developer: Derek Callaghan\nJunior Developer: Adam Bonner\nSenior Tester: Martin Scanlon\nTester: Piaras Buchanan");
         }
 
 

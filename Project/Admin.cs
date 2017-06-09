@@ -12,9 +12,14 @@ namespace Project
 {
     public partial class Admin : Form
     {
+        int thisint = UserInformation.myInt;
         public Admin()
         {
             InitializeComponent();
+            if(thisint == 1)
+            {
+                btnUserInformation.PerformClick();
+            }
         }
 
         private void btnPolicyInformation_Click(object sender, EventArgs e)
@@ -55,7 +60,7 @@ namespace Project
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This is your help");
+            MessageBox.Show("ETB Software Testing Team Project\nPremier Insurance App\nTeam Lead: Sunny Negi\nSenior Developer: Derek Callaghan\nJunior Developer: Adam Bonner\nSenior Tester: Martin Scanlon\nTester: Piaras Buchanan");
         }
     }
 }
