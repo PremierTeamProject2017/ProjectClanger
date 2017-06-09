@@ -69,7 +69,7 @@ namespace Project
 
                 if (e.ColumnIndex == 2 || e.ColumnIndex == 5 || e.ColumnIndex == 6 || e.ColumnIndex == 7 && e.RowIndex != this.dgvUsers.NewRowIndex)
                 {
-                    if (e != null && !String.IsNullOrEmpty(e.Value as string))
+                    if (e != null && !String.IsNullOrEmpty(e.Value as string) && !e.ToString().Contains("="))
                     {
                         e.Value = EncypherDecypher.Decypher(e.Value.ToString());
                     }
@@ -178,14 +178,41 @@ namespace Project
 
         private void btnDeleteUser_Click(object sender, EventArgs e)
         {
-            /*selected = dgvUsers.SelectedRows[0].Cells[0].Value.ToString();
+            selected = dgvUsers.SelectedRows[0].Cells[0].Value.ToString();
             DialogResult result = MessageBox.Show("You have chosen to delete a users account,\nAre you sure?", "Delete Confirmation", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 objConnect.DeleteFromLoginDB(selected);
                 MessageBox.Show("Account Deleted");
                 fillData();
-            }*/
+            }
+        }
+
+        private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnAddUser.PerformClick();
+        }
+
+        private void editUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnEditUser.PerformClick();
+        }
+
+        private void deleteUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnDeleteUser.PerformClick();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnBack.PerformClick();
+        }
+
+        private void logOffToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Login frm2 = new Login();
+            frm2.Show();
         }
 
     }

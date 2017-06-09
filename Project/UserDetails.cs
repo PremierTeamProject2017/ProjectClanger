@@ -22,7 +22,6 @@ namespace Project
         DataRow dr;
         public UserDetails()
         {
-            //Test test
             thisint = UserInformation.myInt;
             saveOrEdit = UserInformation.saveOrEdit;
             InitializeComponent();
@@ -67,8 +66,6 @@ namespace Project
                     chbRestricted.Checked = false;
                 }
             }
-
-
         }
 
         private void UserDetails_Load(object sender, EventArgs e)
@@ -82,88 +79,97 @@ namespace Project
                 lblRestricted.Hide();
                 chbRestricted.Hide();
                 btnNewPassGen.Hide();
+                tsiGenPass.Visible = false;
             }
             else
             {
                 lblRestricted.Show();
                 chbRestricted.Show();
                 btnNewPassGen.Show();
+                tsiGenPass.Visible = true;
             }
         }
-
-    
-
-
-
-      
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (saveOrEdit == 1)
             {
-                string newFirstName = tbFirstName.Text;
-                newFirstName = EncypherDecypher.Encypher(newFirstName);
-                string newSurname = tbSurname.Text;
-                newSurname = EncypherDecypher.Encypher(newSurname);
-                string newEmail = tbEmail.Text;
-                newEmail = EncypherDecypher.Encypher(newEmail);
-                string newAccessLevel;
-                if (cboAccessLevel.SelectedIndex == 0)
+                if (tbFirstName.Text != null && !string.IsNullOrWhiteSpace(tbFirstName.Text) && tbSurname.Text != null && !string.IsNullOrWhiteSpace(tbSurname.Text) && tbEmail.Text != null && !string.IsNullOrWhiteSpace(tbEmail.Text) && cboAccessLevel.Text != null && !string.IsNullOrWhiteSpace(cboAccessLevel.Text))
                 {
-                    newAccessLevel = "1";
-                }
-                else if (cboAccessLevel.SelectedIndex == 1)
-                {
-                    newAccessLevel = "2";
+                    string newFirstName = tbFirstName.Text;
+                    newFirstName = EncypherDecypher.Encypher(newFirstName);
+                    string newSurname = tbSurname.Text;
+                    newSurname = EncypherDecypher.Encypher(newSurname);
+                    string newEmail = tbEmail.Text;
+                    newEmail = EncypherDecypher.Encypher(newEmail);
+                    string newAccessLevel;
+                    if (cboAccessLevel.SelectedIndex == 0)
+                    {
+                        newAccessLevel = "1";
+                    }
+                    else if (cboAccessLevel.SelectedIndex == 1)
+                    {
+                        newAccessLevel = "2";
+                    }
+                    else
+                    {
+                        newAccessLevel = "3";
+                    }
+                    string newUserName = myGen.genUserName();
+                    string newPassword = Generator.Generate(8);
+                    string encPassword = EncypherDecypher.Encypher(newPassword);
+                    MessageBox.Show("Username: " + newUserName + "/nPassword: " + newPassword);
+
+                    connect.AddToLoginDB(newUserName, encPassword, newAccessLevel, newFirstName, newSurname, newEmail);
+                    this.Close();
+                    UserInformation frm = new UserInformation();
+                    frm.Show();
                 }
                 else
                 {
-                    newAccessLevel = "3";
+                    MessageBox.Show("Please fill out all fields before clicking save");
                 }
-                string newUserName = myGen.genUserName();
-                string newPassword = Generator.Generate(8);
-                string encPassword = EncypherDecypher.Encypher(newPassword);
-                MessageBox.Show("Username: " + newUserName + "/nPassword: " + newPassword);
-
-                connect.AddToLoginDB(newUserName, encPassword, newAccessLevel, newFirstName, newSurname, newEmail);
-                this.Close();
-                UserInformation frm = new UserInformation();
-                frm.Show();
             }
             else
             {
-                string updateFirstName = tbFirstName.Text;
-                updateFirstName = EncypherDecypher.Encypher(updateFirstName);
-                string updateSurname = tbSurname.Text;
-                updateSurname = EncypherDecypher.Encypher(updateSurname);
-                string updateEmail = tbEmail.Text;
-                updateEmail = EncypherDecypher.Encypher(updateEmail);
-                string updateAccessLevel;
-                if (cboAccessLevel.SelectedIndex == 0)
+                if (tbFirstName.Text != null && !string.IsNullOrWhiteSpace(tbFirstName.Text) && tbSurname.Text != null && !string.IsNullOrWhiteSpace(tbSurname.Text) && tbEmail.Text != null && !string.IsNullOrWhiteSpace(tbEmail.Text) && cboAccessLevel.Text != null && !string.IsNullOrWhiteSpace(cboAccessLevel.Text))
                 {
-                    updateAccessLevel = "1";
-                }
-                else if (cboAccessLevel.SelectedIndex == 1)
-                {
-                    updateAccessLevel = "2";
+                    string updateFirstName = tbFirstName.Text;
+                    updateFirstName = EncypherDecypher.Encypher(updateFirstName);
+                    string updateSurname = tbSurname.Text;
+                    updateSurname = EncypherDecypher.Encypher(updateSurname);
+                    string updateEmail = tbEmail.Text;
+                    updateEmail = EncypherDecypher.Encypher(updateEmail);
+                    string updateAccessLevel;
+                    if (cboAccessLevel.SelectedIndex == 0)
+                    {
+                        updateAccessLevel = "1";
+                    }
+                    else if (cboAccessLevel.SelectedIndex == 1)
+                    {
+                        updateAccessLevel = "2";
+                    }
+                    else
+                    {
+                        updateAccessLevel = "3";
+                    }
+                    string updateIsRestricted;
+                    if (chbRestricted.Checked == true)
+                    {
+                        updateIsRestricted = "True";
+                    }
+                    else
+                    {
+                        updateIsRestricted = "False";
+                    }
+                    connect.UpdateLoginDB(selected, updateAccessLevel, updateIsRestricted, updateFirstName, updateSurname, updateEmail);
+                    this.Close();
+                    UserInformation frm = new UserInformation();
+                    frm.Show();
                 }
                 else
                 {
-                    updateAccessLevel = "3";
+                    MessageBox.Show("Please fill out all fields before clicking save");
                 }
-                string updateIsRestricted;
-                if (chbRestricted.Checked == true)
-                {
-                    updateIsRestricted = "True";
-                }
-                else
-                {
-                    updateIsRestricted = "False";
-                }
-                connect.UpdateLoginDB(selected, updateAccessLevel, updateIsRestricted, updateFirstName, updateSurname, updateEmail);
-                this.Close();
-                UserInformation frm = new UserInformation();
-                frm.Show();
             }
         }
 
@@ -182,6 +188,21 @@ namespace Project
             this.Close();
             UserInformation frm = new UserInformation();
             frm.Show();
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnSave.PerformClick();
+        }
+
+        private void backToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnBack.PerformClick();
+        }
+
+        private void generatePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnNewPassGen.PerformClick();
         }
 
 

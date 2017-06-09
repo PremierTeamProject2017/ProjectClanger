@@ -88,7 +88,6 @@ namespace Project
                 frm.Show();
                 Console.WriteLine("Admin Success!");
             }
-            //else if (dRow.ItemArray.GetValue(3).ToString().Equals("2"))
             else if (tbUsername.Text.Equals("2"))
             {
                 Console.WriteLine("Rank 2 Success!");
@@ -169,6 +168,16 @@ namespace Project
         {
             this.Close();
             Process.GetCurrentProcess().Kill();
+        }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnLogin.PerformClick();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnExit.PerformClick();
         }
     }
 }

@@ -49,7 +49,6 @@ namespace Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int i = 1;
             this.Close();
             PolicyInformation frm = new PolicyInformation();
             frm.Show();
