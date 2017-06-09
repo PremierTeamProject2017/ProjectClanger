@@ -22,6 +22,7 @@ namespace Project
         DataRow dr;
         public UserDetails()
         {
+            //Test test
             thisint = UserInformation.myInt;
             saveOrEdit = UserInformation.saveOrEdit;
             InitializeComponent();
